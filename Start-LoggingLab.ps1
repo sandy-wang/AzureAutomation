@@ -1,5 +1,12 @@
 workflow Start-LoggingLab
 {
+    $VerbosePreference = "Continue"
+
+InlineScript{
+        $VerbosePreference = [System.Management.Automation.ActionPreference]$Using:VerbosePreference
+        Write-Verbose "This is a Verbose Line Within an InlineScript"
+    }
+
     Write-OutPut "This is an Output Line"
  
     Write-Warning "This is a Warning Line"
