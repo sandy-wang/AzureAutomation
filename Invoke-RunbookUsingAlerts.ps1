@@ -14,7 +14,6 @@ workflow Invoke-RunbookUsingAlerts
         # Outputs information on the webhook name that called This 
         Write-Output "This runbook was started from webhook $WebhookName." 
  
- 
         # Obtain the WebhookBody containing the AlertContext 
         $WebhookBody = (ConvertFrom-Json -InputObject $WebhookBody) 
         Write-Output "`nWEBHOOK BODY" 
@@ -23,7 +22,7 @@ workflow Invoke-RunbookUsingAlerts
  
         # Obtain the AlertContext     
         $AlertContext = [object]$WebhookBody.context
- 
+
         # Some selected AlertContext information 
         Write-Output "`nALERT CONTEXT DATA" 
         Write-Output "===================" 
@@ -39,7 +38,7 @@ workflow Invoke-RunbookUsingAlerts
         # Authenticate to your Azure subscription using Organization ID to be able to restart that Virtual Machine. 
         $cred = Get-AutomationPSCredential -Name "ContosoAccount" 
         Add-AzureAccount -Credential $cred 
-        Select-AzureSubscription -subscriptionName "Free Trial" 
+        Select-AzureSubscription -subscriptionName "Visual Studio Professional with MSDN" 
  
         #Check the status property of the VM
         Write-Output "Status of VM before taking action"
