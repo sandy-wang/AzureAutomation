@@ -73,7 +73,6 @@ foreach ($VM in $VMs)
 {
 	$VM | Stop-AzureRmVM -Force -ErrorAction Continue
 
-    $StopRtn.Status = 'Successded'
 	if ($StopRtn.Status -ne 'Succeeded')
 	{
 		# The VM failed to stop, so send notice
